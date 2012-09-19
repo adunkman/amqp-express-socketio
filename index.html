@@ -1,0 +1,19 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://localhost');
+      socket.on('new-item', function (data) {
+        document.getElementById("items").innerHTML += "<li>" + data + "</li>";
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Items</h1>
+    <ul id="items">
+      <li>Existing item 1</li>
+      <li>Existing item 2</li>
+    </ul>
+  </body>
+</html>
